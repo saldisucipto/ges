@@ -1,90 +1,39 @@
 @extends('layouts.frontendmaster')
-
-
 @section('konten')
-    {{-- product Section --}}
-    <section id="works">
-        <div class="container">
-          <div class="row">
-            <div class="span12">
-              <h4 class="title">Recent <strong>Works</strong></h4>
-              <div class="row">
-
-                <div class="grid cs-style-4">
-                  <div class="span3">
-                    <div class="item">
-                      <figure>
-                        <div><img src="{{asset('frontend_assets/img/dummies/works/1.jpg')}}" alt="" /></div>
-                        <figcaption>
-                          <div>
-                            <span>
-                                  <a href="{{asset('frontend_assets/img/dummies/works/big.png')}}" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
-                                  </span>
-                            <span>
-                                  <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
-                                  </span>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-                  <div class="span3">
-                    <div class="item">
-                      <figure>
-                        <div><img src="{{asset('frontend_assets/img/dummies/works/2.jpg')}}" alt="" /></div>
-                        <figcaption>
-                          <div>
-                            <span>
-                                  <a href="{{asset('frontend_assets/img/dummies/works/big.png')}}" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
-                                  </span>
-                            <span>
-                                  <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
-                                  </span>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-                  <div class="span3">
-                    <div class="item">
-                      <figure>
-                        <div><img src="{{asset('frontend_assets/img/dummies/works/3.jpg')}}" alt="" /></div>
-                        <figcaption>
-                          <div>
-                            <span>
-                                  <a href="{{asset('frontend_assets/img/dummies/works/big.png')}}" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
-                                  </span>
-                            <span>
-                                  <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
-                                  </span>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-                  <div class="span3">
-                    <div class="item">
-                      <figure>
-                        <div><img src="{{asset('frontend_assets/img/dummies/works/4.jpg')}}" alt="" /></div>
-                        <figcaption>
-                          <div>
-                            <span>
-                                  <a href="{{asset('frontend_assets/img/dummies/works/big.png')}}" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
-                                  </span>
-                            <span>
-                                  <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
-                                  </span>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+    <!-- Sidenav -->
+    <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+        <div class="scrollbar-inner">
+            <!-- Brand -->
+            <div class="sidenav-header  align-items-center">
+                <a class="navbar-brand" href="javascript:void(0)">
+                    <img src="{{ asset('frontend_assets/img/ges.png') }}" class="navbar-brand-img" alt="...">
+                </a>
             </div>
-          </div>
+            {{-- Sidebar --}}
+            <x-sidebar-dashboard></x-sidebar-dashboard>
+            {{-- End Sidebar --}}
         </div>
-      </section>
-      {{-- end product Section --}}
+    </nav>
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <!-- Header -->
+        <!-- Header -->
+        <div class="header bg-primary pb-6">
+            <div class="container-fluid">
+                <div class="header-body">
+                    <div class="row align-items-center py-4">
+                        <div class="col-lg-6 col-7 ">
+                            <h1 class="text-white">Hi, Saldi Sucipto</h1>
+                        </div>
+                    </div>
+                    <!-- Card stats -->
+                    <x-card-canvas></x-card-canvas>
+                    {{-- End Card Stats --}}
+                </div>
+            </div>
+        </div>
+        {{-- product Section --}}
+
+        {{-- end product Section --}}
+    </div>
 @endsection

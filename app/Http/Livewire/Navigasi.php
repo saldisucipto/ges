@@ -10,6 +10,8 @@ class Navigasi extends Component
     public function render()
     {
         $nav = datanya::get()->all();
-        return view('livewire.navigasi');
+        return view('livewire.navigasi', [
+            'nav' => $nav,
+        ]);
     }
 }

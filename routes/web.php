@@ -22,7 +22,9 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');;
     Route::prefix('ges-admin')->group(function () {
-        Route::match(['get', 'post'], '/navigasi', 'DashboardController@navigasi')->name('navigasi');
+        Route::get('/navigasi', 'DashboardController@navigasi')->name('navigasi');
+        Route::post('/naviasi/create', 'DashboardController@create')->name('createNavigasi');
+        Route::match(['put', 'delete'], '/navigasi/{id}', 'DashboardController@update')->name('updateNavigasi');
     });
 });
 
