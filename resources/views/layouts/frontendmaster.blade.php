@@ -40,7 +40,7 @@
         <div class="row nomargin">
           <div class="span4">
             <div class="logo">
-              <a href="index.html"><img src="{{asset('frontend_assets/img/logo.png')}}" alt="" /></a>
+              <a href="index.html"><img src="{{asset('frontend_assets/img/ges.png')}}" alt="" /></a>
             </div>
           </div>
           <div class="span8">
