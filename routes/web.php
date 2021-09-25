@@ -21,6 +21,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('ges-admin', function () {
         return view('dashboard');
     })->name('dashboard');;
+    Route::prefix('ges-admin')->group(function () {
+        Route::match(['get', 'post'], '/navigasi', 'DashboardController@navigasi')->name('navigasi');
+    });
 });
 
 require __DIR__ . '/auth.php';
