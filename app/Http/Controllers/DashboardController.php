@@ -46,4 +46,16 @@ class DashboardController extends Controller
             return back()->with('success', 'User Update successfully.');
         }
     }
+
+    // slider
+    function sliders()
+    {
+        return view('dashboard.sliders');
+    }
+
+    // create slider
+    function createSlider()
+    {
+        return "createSlidersFunction";
+    }
 }

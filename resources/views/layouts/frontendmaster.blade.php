@@ -94,59 +94,10 @@
                     </div>
                 </div>
             </div>
-            <!-- slide 2 here -->
-            <div data-src="{{ asset('frontend_assets/img/slides/camera/slide2/img1.jpg') }}">
-                <div class="camera_caption fadeFromLeft">
-                    <div class="container">
-                        <div class="row">
-                            <div class="span6">
-                                <img src="{{ asset('frontend_assets/img/slides/camera/slide2/iMac.png') }}" alt="" />
-                            </div>
-                            <div class="span6">
-                                <h2 class="animated fadeInDown"><strong>Put your <span class="colored">Opt in
-                                            form</span></strong></h2>
-                                <p class="animated fadeInUp"> Vim porro dicam reprehendunt te, populo quodsi dissentiet
-                                    cum ad. Ne natum deseruisse vis. Iisque deseruisse sententiae mel ne, dolores
-                                    appetere vim ut. Sea no tamquam reprimique.</p>
-                                <form>
-                                    <div class="input-append">
-                                        <input class="span3 input-large" type="text">
-                                        <button class="btn btn-theme btn-large" type="submit">Subscribe</button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- slide 3 here -->
-            <div data-src="{{ asset('frontend_assets/img/slides/camera/slide2/img1.jpg') }}">
-                <div class="camera_caption fadeFromLeft">
-                    <div class="container">
-                        <div class="row">
-                            <div class="span12 aligncenter">
-                                <h2 class="animated fadeInDown"><strong><span class="colored">Responsive</span>
-                                        and <span class="colored">cross broswer</span> compatibility</strong>
-                                </h2>
-                                <p class="animated fadeInUp">Pellentesque habitant morbi tristique senectus et netus et
-                                    malesuada</p>
-                                <img src="{{ asset('frontend_assets/img/slides/camera/slide3/browsers.png') }}"
-                                    alt="" class="animated bounceInDown delay1" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
         <!-- slideshow end here -->
-
     </section>
     <!-- /section Sliders -->
-
     {{-- Under Slider --}}
     <section id="content">
         <div class="container">

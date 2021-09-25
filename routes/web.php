@@ -22,9 +22,13 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');;
     Route::prefix('ges-admin')->group(function () {
+        // Navigasi
         Route::get('/navigasi', 'DashboardController@navigasi')->name('navigasi');
         Route::post('/naviasi/create', 'DashboardController@create')->name('createNavigasi');
         Route::match(['put', 'delete'], '/navigasi/{id}', 'DashboardController@update')->name('updateNavigasi');
+        // Sliders
+        Route::get('/sliders', 'DashboardController@sliders')->name('sliders');
+        Route::post('/sliders/create', 'DashboardController@createSlider')->name('createSliders');
     });
 });
 

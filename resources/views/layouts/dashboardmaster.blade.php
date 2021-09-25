@@ -25,6 +25,9 @@
     <!-- Page content -->
     @yield('konten')
 
+    {{-- My js --}}
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('dashboard_assets/js/myjs.js') }}"></script>
 
     <!-- Argon Scripts -->
     <!-- Core -->
