@@ -35,6 +35,14 @@
         <div class="container-fluid mt--6">
             <div class="row">
                 <div class="col-xl-8">
+                    @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                            @php
+                                Session::forget('success');
+                            @endphp
+                        </div>
+                    @endif
                     <div class="card">
                         <div class="card-header bg-transparent">
                             <div class="row align-items-center">
@@ -45,27 +53,34 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form action="">
+                            <form action="{{ route('updateCompanyInfo') }}" enctype="multipart/form-data" method="POST">
+                                @csrf
+                                @method('PUT')
                                 <div class="form-group">
                                     <label for="companyName">Company Name</label>
                                     <input type="text" class="form-control" id="companyName" aria-describedby="emailHelp"
-                                        name="company_name" placeholder="PT. ....">
+                                        value="{{ $company_info->company_name }}" name="company_name"
+                                        placeholder="PT. ....">
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Telepphone 1</label>
-                                    <input type="text" class="form-control" name="phone" id="phoneNumber">
+                                    <input type="text" class="form-control" name="phone" id="phoneNumber"
+                                        value="{{ $company_info->phone }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Telepphone 2</label>
-                                    <input type="text" class="form-control" name="phone1" id="phoneNumber">
+                                    <input type="text" class="form-control" name="phone1"
+                                        placeholder="Optional Nomor Telepon">
                                 </div>
                                 <div class="form-group">
                                     <label for="address"> Email </label>
-                                    <input type="email" class="form-control" name="email" id="phoneNumber">
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        value="{{ $company_info->email }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="address">Address</label>
-                                    <textarea class="form-control" name="address" id="" cols="30" rows="10"></textarea>
+                                    <textarea class="form-control" name="address" id="" cols="30"
+                                        rows="10">{{ $company_info->address }}</textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>

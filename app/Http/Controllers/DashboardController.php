@@ -7,10 +7,26 @@ use App\Http\Requests\NavigasiPostStore;
 use App\Models\Navigasi;
 use Illuminate\Support\Str;
 use App\Models\Sliders;
+use App\Models\CompanyInfo;
 use App\Classes\Files;
 
 class DashboardController extends Controller
 {
+    // update company info
+    function updateCompanyInfo(Request $update)
+    {
+        $data = $update->all();
+        $company = CompanyInfo::find(1);
+
+        $company->company_name = $data['company_name'];
+        $company->phone = $data['phone'];
+        $company->phone1 = $data['phone1'];
+        $company->email = $data['email'];
+        $company->address = $data['address'];
+        $company->save();
+        return back()->with('success', 'Company info update successfully.');
+    }
+
     // navigasi
     function navigasi()
     {
