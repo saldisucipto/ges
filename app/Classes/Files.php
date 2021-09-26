@@ -6,7 +6,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class Files
 {
-    public function upload($image, $directory, $image_name)
+    public function upload(Object $image, String $directory, String $image_name)
     {
         /**
          * Uploaded Files
@@ -21,5 +21,13 @@ class Files
         // move to folder
         $image->move($folder, $nama_image);
         return $nama_image;
+    }
+
+    public function update(String $old_image, String $path)
+    {
+        $image_path = \public_path($path . "\\") . $old_image;
+        if (file_exists($image_path)) {
+            @unlink($image_path);
+        }
     }
 }

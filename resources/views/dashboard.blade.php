@@ -35,42 +35,40 @@
         <div class="container-fluid mt--6">
             <div class="row">
                 <div class="col-xl-8">
-                    <div class="card bg-default">
+                    <div class="card">
                         <div class="card-header bg-transparent">
                             <div class="row align-items-center">
                                 <div class="col">
-                                    <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                                    <h5 class="h3 text-white mb-0">Sales value</h5>
-                                </div>
-                                <div class="col">
-                                    <ul class="nav nav-pills justify-content-end">
-                                        <li class="nav-item mr-2 mr-md-0" data-toggle="chart"
-                                            data-target="#chart-sales-dark"
-                                            data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}'
-                                            data-prefix="$" data-suffix="k">
-                                            <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
-                                                <span class="d-none d-md-block">Month</span>
-                                                <span class="d-md-none">M</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item" data-toggle="chart" data-target="#chart-sales-dark"
-                                            data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}'
-                                            data-prefix="$" data-suffix="k">
-                                            <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
-                                                <span class="d-none d-md-block">Week</span>
-                                                <span class="d-md-none">W</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <h6 class="text-uppercase ls-1 mb-1">PT.GLOBAL ENVIRONMENT SOLUSINDO</h6>
+                                    <h5 class="h3 mb-0">Company Settings</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <!-- Chart -->
-                            <div class="chart">
-                                <!-- Chart wrapper -->
-                                <canvas id="chart-sales-dark" class="chart-canvas"></canvas>
-                            </div>
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="companyName">Company Name</label>
+                                    <input type="text" class="form-control" id="companyName" aria-describedby="emailHelp"
+                                        name="company_name" placeholder="PT. ....">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Telepphone 1</label>
+                                    <input type="text" class="form-control" name="phone" id="phoneNumber">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Telepphone 2</label>
+                                    <input type="text" class="form-control" name="phone1" id="phoneNumber">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address"> Email </label>
+                                    <input type="email" class="form-control" name="email" id="phoneNumber">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <textarea class="form-control" name="address" id="" cols="30" rows="10"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
                         </div>
                     </div>
                 </div>

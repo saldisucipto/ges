@@ -112,7 +112,7 @@
                                                         <button class="btn btn-sm btn-warning" data-toggle="modal"
                                                             data-target="#updateSlider{{ $item->id }}">Edit</button>
                                                         <button class="btn btn-sm btn-danger" data-toggle="modal"
-                                                            data-target="">Delete</button>
+                                                            data-target="#del{{ $item->id }}">Delete</button>
                                                     </td>
                                                 </tr>
                                                 {{-- Modal Image --}}
@@ -153,8 +153,9 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form action="{{ route('createSliders') }}" method="POST"
-                                                                    enctype="multipart/form-data">
+                                                                <form
+                                                                    action="{{ url('/ges-admin/sliders/update', $item->id) }}"
+                                                                    method="POST" enctype="multipart/form-data">
                                                                     @csrf
                                                                     @method('PUT')
                                                                     <div class="form-group">
@@ -192,6 +193,45 @@
                                                     </div>
                                                 </div>
                                                 {{-- End Update Modal --}}
+                                                {{-- Modal Delete --}}
+                                                <div class="modal fade" id="del{{ $item->id }}" tabindex="-1"
+                                                    role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title text-uppercase"
+                                                                    id="exampleModalLabel">Delete
+                                                                    {{ $item->title }}</h5>
+                                                                <button type="button" class="close"
+                                                                    data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form
+                                                                    action="{{ url('/ges-admin/sliders/update', $item->id) }}"
+                                                                    method="POST" enctype="multipart/form-data">
+                                                                    @method('DELETE')
+                                                                    @csrf
+                                                                    <div class="form-group">
+                                                                        <h2 class="text-center">Are You Sure??</h2>
+                                                                        <h3 class="text-center">
+                                                                            <span
+                                                                                class="text-danger">{{ $item->title }}</span>
+                                                                            Will Be Deleted!
+                                                                        </h3>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                        <button type="submit"
+                                                                            class="btn btn-primary btn-danger">Yes</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             @endforeach
                                             <!-- Modal Update -->
                                         </tbody>

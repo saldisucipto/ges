@@ -4053,7 +4053,6 @@ var _loop = function _loop(i) {
       console.log("error", error);
     });
   });
-  console.log('.wysiwyg' + [i]);
 };
 
 for (var i = 1; i <= 10; i++) {
@@ -4061,6 +4060,16 @@ for (var i = 1; i <= 10; i++) {
 
   _loop(i);
 }
+
+var ready = function ready(callback) {
+  if (document.readyState != "loading") callback();else document.addEventListener("DOMContentLoaded", callback);
+};
+
+ready(function () {
+  _ckeditor_ckeditor5_build_classic_build_ckeditor__WEBPACK_IMPORTED_MODULE_0___default().create(document.querySelector('.wysiwyg'))["catch"](function (error) {
+    console.log("error", error);
+  });
+});
 
 /***/ }),
 

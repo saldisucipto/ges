@@ -29,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
         // Sliders
         Route::get('/sliders', 'DashboardController@sliders')->name('sliders');
         Route::post('/sliders/create', 'DashboardController@createSlider')->name('createSliders');
+        Route::match(['PUT', 'DELETE'], '/sliders/update/{id}', 'DashboardController@updateSlider')->name('updateSliders');
     });
 });
 

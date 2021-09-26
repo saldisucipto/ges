@@ -68,4 +68,40 @@ class DashboardController extends Controller
         $slider->save();
         return back()->with('success', 'Slider create successfully.');
     }
+    // update slider
+    function updateSlider(Request $request, $id = null)
+    {
+        if ($request->isMethod('PUT')) {
+            $image_file = $request->file('image');
+            $data = $request->all();
+            if (!empty($image_file)) {
+                $slider = Sliders::find($id);
+                $update_image = new Files();
+                $update_image->update($slider->image, 'sliders');
+
+                $image_files = new Files();
+                $image = $image_files->upload($request->file('image'), 'sliders', 'sliders');
+
+                $slider->title = $data['title'];
+                $slider->slugs = Str::slug($data['title']);
+                $slider->description = $data['description'];
+                $slider->image = $image;
+                $slider->update();
+                return back()->with('success', 'Slider update successfully.');
+            } else {
+                $slider = Sliders::find($id);
+                $slider->title = $data['title'];
+                $slider->slugs = Str::slug($data['title']);
+                $slider->description = $data['description'];
+                $slider->update();
+                return back()->with('success', 'Slider update successfully.');
+            }
+        } elseif ($request->isMethod('DELETE')) {
+            $slider = Sliders::find($id);
+            $update_image = new Files();
+            $update_image->update($slider->image, 'sliders');
+            $slider->delete();
+            return back()->with('success', 'Slider delete successfully.');
+        }
+    }
 }
