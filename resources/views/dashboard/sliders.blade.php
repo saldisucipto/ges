@@ -85,34 +85,114 @@
                                             @php
                                                 $nomor = 1;
                                             @endphp
-                                            <tr>
-                                                <th scope="row">
-                                                    <strong>{{ $nomor++ }}</strong>
-                                                </th>
-                                                <td class="budget">
-                                                    Sliders Title
-                                                </td>
-                                                <td class="budget">
-                                                    Description
-                                                </td>
-                                                <td class="budget">
-                                                    <button class="btn btn-sm btn-primary"><i
-                                                            class="fas fa-eye"></i>Show
-                                                        Image</button>
-                                                </td>
-                                                <td>
-                                                    <span class="badge badge-dot mr-4">
-                                                        <i class="bg-warning"></i>
-                                                        <span class="status">data</span>
-                                                    </span>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-sm btn-warning" data-toggle="modal"
-                                                        data-target="">Edit</button>
-                                                    <button class="btn btn-sm btn-danger" data-toggle="modal"
-                                                        data-target="">Delete</button>
-                                                </td>
-                                            </tr>
+                                            @foreach ($data as $item)
+                                                <tr>
+                                                    <th scope="row">
+                                                        <strong>{{ $nomor++ }}</strong>
+                                                    </th>
+                                                    <td class="budget">
+                                                        {{ $item->title }}
+                                                    </td>
+                                                    <td class="budget text-sm">
+                                                        {!! $item->description !!}
+                                                    </td>
+                                                    <td class="budget">
+                                                        <button class="btn btn-sm btn-primary" data-toggle="modal"
+                                                            data-target="#image{{ $item->id }}"><i
+                                                                class="fas fa-eye"></i>Show
+                                                            Image</button>
+                                                    </td>
+                                                    <td>
+                                                        <span class="badge badge-dot mr-4">
+                                                            <i class="bg-warning"></i>
+                                                            <span class="status">/{{ $item->slugs }}</span>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-warning" data-toggle="modal"
+                                                            data-target="#updateSlider{{ $item->id }}">Edit</button>
+                                                        <button class="btn btn-sm btn-danger" data-toggle="modal"
+                                                            data-target="">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                {{-- Modal Image --}}
+                                                <div class="modal fade" id="image{{ $item->id }}" tabindex="-1"
+                                                    role="dialog" aria-labelledby="image{{ $item->id }}Label"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                                    {{ $item->title }}</h5>
+                                                                <button type="button" class="close"
+                                                                    data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="/sliders/{{ $item->image }}" alt=""
+                                                                    class="img-fluid mx-auto">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{-- End Modal Image --}}
+                                                {{-- Update Modal --}}
+                                                <div class="modal fade" id="updateSlider{{ $item->id }}"
+                                                    tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg modal-dialog-centered"
+                                                        role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-warning">
+                                                                <h5 class="modal-title text-white">Update Sliders
+                                                                    {{ $item->title }}</h5>
+                                                                <button type="tbuton" class="close"
+                                                                    data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true"
+                                                                        class="text-white">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form action="{{ route('createSliders') }}" method="POST"
+                                                                    enctype="multipart/form-data">
+                                                                    @csrf
+                                                                    @method('PUT')
+                                                                    <div class="form-group">
+                                                                        <label for="TitleSlider">Title Sliders</label>
+                                                                        <input type="text" class="form-control"
+                                                                            id="TitleSlider" name="title"
+                                                                            value="{{ $item->title }}"
+                                                                            placeholder="Home">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="NavigasiTitle">Description
+                                                                            Sliders</label>
+                                                                        <textarea
+                                                                            class="form-control wysiwyg{{ $nomor }}"
+                                                                            rows="20"
+                                                                            name="description">{!! $item->description !!}</textarea>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="images">Image Slider</label>
+                                                                        <input type="file" name="image" id="image"
+                                                                            class="form-control">
+                                                                    </div>
+                                                                    <!-- Validation Errors -->
+                                                                    {{-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> --}}
+                                                                    <ul class="list-disc list-inside text-sm text-danger">
+                                                                        @foreach ($errors->all() as $error)
+                                                                            <li>{{ $error }}</li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                    <button type="submit"
+                                                                        class="btn btn-md btn-warning">update</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {{-- End Update Modal --}}
+                                            @endforeach
                                             <!-- Modal Update -->
                                         </tbody>
                                     </table>

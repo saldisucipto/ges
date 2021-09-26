@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\NavigasiPostStore;
 use App\Models\Navigasi;
 use Illuminate\Support\Str;
+use App\Models\Sliders;
+use App\Classes\Files;
 
 class DashboardController extends Controller
 {
@@ -17,8 +19,7 @@ class DashboardController extends Controller
             'nav' => $nav,
         ]);
     }
-
-    // create func
+    // create function
     function create(NavigasiPostStore $request)
     {
         $input = $request->all();
@@ -28,7 +29,6 @@ class DashboardController extends Controller
         $nav->save();
         return back()->with('success', 'User created successfully.');
     }
-
     // create update
     function update(Request $request, $id = null)
     {
@@ -46,16 +46,26 @@ class DashboardController extends Controller
             return back()->with('success', 'User Update successfully.');
         }
     }
-
     // slider
     function sliders()
     {
-        return view('dashboard.sliders');
+        $data = Sliders::get()->all();
+        return view('dashboard.sliders', [
+            'data' => $data
+        ]);
     }
-
     // create slider
-    function createSlider()
+    function createSlider(Request $request)
     {
-        return "createSlidersFunction";
+        $data = $request->all();
+        $image_files = new Files();
+        $image = $image_files->upload($request->file('image'), 'sliders', 'sliders');
+        $slider = new Sliders;
+        $slider->title = $data['title'];
+        $slider->slugs = Str::slug($data['title']);
+        $slider->description = $data['description'];
+        $slider->image = $image;
+        $slider->save();
+        return back()->with('success', 'Slider create successfully.');
     }
 }

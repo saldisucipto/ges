@@ -4043,15 +4043,24 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 
 
-var ready = function ready(callback) {
-  if (document.readyState != "loading") callback();else document.addEventListener("DOMContentLoaded", callback);
+var _loop = function _loop(i) {
+  ready = function ready(callback) {
+    if (document.readyState != "loading") callback();else document.addEventListener("DOMContentLoaded", callback);
+  };
+
+  ready(function () {
+    _ckeditor_ckeditor5_build_classic_build_ckeditor__WEBPACK_IMPORTED_MODULE_0___default().create(document.querySelector('.wysiwyg' + [i]))["catch"](function (error) {
+      console.log("error", error);
+    });
+  });
+  console.log('.wysiwyg' + [i]);
 };
 
-ready(function () {
-  _ckeditor_ckeditor5_build_classic_build_ckeditor__WEBPACK_IMPORTED_MODULE_0___default().create(document.querySelector('.wysiwyg'))["catch"](function (error) {
-    console.log("error", error);
-  });
-});
+for (var i = 1; i <= 10; i++) {
+  var ready;
+
+  _loop(i);
+}
 
 /***/ }),
 
