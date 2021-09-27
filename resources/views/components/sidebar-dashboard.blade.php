@@ -31,6 +31,12 @@
                         <span class="nav-link-text">Sliders</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('staticPages') }}">
+                        <i class="ni ni-collection"></i>
+                        <span class="nav-link-text">Static Pages</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
