@@ -35,6 +35,11 @@ Route::middleware(['auth'])->group(function () {
         // Static Pages
         Route::get('/static-pages', 'StaticPagesController@index')->name('staticPages');
         Route::post('/static-pages/create', 'StaticPagesController@staticPages')->name('createPages');
+        // Product Pages
+        Route::get('/products-category', 'ProductController@indexProdCat')->name('productCategory');
+        Route::post('/product-category-create', 'ProductController@createCategory')->name('createCategory');
+        Route::match(['get', 'put'], '/category-product/{id}', 'ProductController@editCategoryProduct');
+        Route::get('/delete-category/{id}', 'ProductController@deleteCat');
     });
 });
 
