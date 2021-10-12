@@ -3,9 +3,14 @@
         <!-- Collapse -->
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
             <!-- Nav items -->
+            @php
+            $url = url()->current();
+            $base = config('app.url');
+            @endphp
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ route('dashboard') }}">
+                    <a class="nav-link @if($url === 'http://ges.test/ges-admin') active @endif"
+                        href="{{ route('dashboard') }}">
                         <i class="ni ni-tv-2 text-primary"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
@@ -20,19 +25,22 @@
             <!-- Navigation -->
             <ul class="navbar-nav mb-md-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('navigasi') }}">
+                    <a class="nav-link  @if($url === 'http://ges.test/ges-admin/navigasi') active @endif"
+                        href="{{ route('navigasi') }}">
                         <i class="ni ni-spaceship"></i>
                         <span class="nav-link-text">Navigasi</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('sliders') }}">
+                    <a class="nav-link @if($url === 'http://ges.test/ges-admin/sliders') active @endif"
+                        href="{{ route('sliders') }}">
                         <i class="ni ni-image"></i>
                         <span class="nav-link-text">Sliders</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('staticPages') }}">
+                    <a class="nav-link @if($url === 'http://ges.test/ges-admin/static-pages') active @endif"
+                        href="{{ route('staticPages') }}">
                         <i class="ni ni-collection"></i>
                         <span class="nav-link-text">Static Pages</span>
                     </a>
