@@ -10,6 +10,7 @@ Route::get('/', function () {
 Route::get('/product', 'FrontController@produk');
 Route::get('/about', 'FrontController@about');
 Route::get('/contact', 'FrontController@contact');
+Route::get('/product-detail/{slugs}', 'FrontController@productDetail');
 
 
 

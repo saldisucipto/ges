@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Our Product </title>
+    <title>Product {{$dataProduct->title}} </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Your page description here" />
     <meta name="author" content="" />
@@ -67,53 +67,60 @@
             {{-- End Navigasi Utama --}}
         </header>
         <!-- end header -->
-
-        <section id="inner-headline">
-            <div class="container">
-                <div class="row">
-                    <div class="span12">
-                        <div class="inner-heading">
-                            <h2 class="pt-2">Our Product</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="content">
             <div class="container">
                 <div class="row">
                     <div class="span12">
-                        <ul class="team-categ filter">
-                            @foreach ($catPro as $item)
-                            <li class="{{$item->id}}"><a href="#">{{$item->title}}</a></li>
-                            @endforeach
-                        </ul>
-
-                        <div class="clearfix"></div>
+                        {{-- <div class="clearfix"></div> --}}
                         <div class="row">
-                            <section id="team">
-                                <ul id="thumbs" class="team">
+                            <section id="content">
+                                <div class="container">
+                                    <div class="row">
 
-                                    @foreach ($dataProduct as $item)
-                                    <li class="item-thumbs span3 design" data-id="id-0"
-                                        data-type="{{$item->categoryProduct->id}}">
-                                        <div class="team-box thumbnail">
-                                            <img src="/product/{{$item->images}}" alt="" />
-                                            <div class="caption">
-                                                <h5>{{$item->tittle}}</h5>
-                                                <P>Product Info</P>
-                                                <p>
-                                                    <a href="/product-detail/{{$item->slugs}}"
-                                                        class="btn btn-sm btn-primary">PRODUCT DETAIL</a>
-                                                </p>
-                                            </div>
+                                        <div class="span8">
+
+                                            <article class="single">
+                                                <div class="row">
+
+                                                    <div class="span8">
+                                                        <div class="post-image">
+                                                            <div class="post-heading">
+                                                                <h3><a href="#">{{$dataProduct->tittle}}</a></h3>
+                                                            </div>
+                                                            <img src="/product/{{$dataProduct->images}}"
+                                                                alt="{{$dataProduct->title}}">
+                                                        </div>
+                                                        <div class="meta-post">
+                                                        </div>
+                                                        {!! $dataProduct->description !!}
+                                                    </div>
+                                                </div>
+                                            </article>
                                         </div>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </section>
 
+                                        <div class="span4">
+
+                                            <aside class="right-sidebar">
+                                                <div class="widget">
+
+                                                    <h5 class="widgetheading">Categories</h5>
+                                                    <img class="py-4"
+                                                        src="/category-product/{{$dataProduct->categoryProduct->images}}"
+                                                        alt="">
+                                                    <ul class="cat">
+                                                        <li><i class="icon-angle-right"></i> <a
+                                                                href="#">{{$dataProduct->categoryProduct->title}}</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="widget">
+                                                    {{$dataProduct->categoryProduct->description}}
+                                                </div>
+                                            </aside>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </div>
