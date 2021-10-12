@@ -52,6 +52,13 @@
                         <span class="nav-link-text">Category Product</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link @if($url === 'http://ges.test/ges-admin/products') active @endif"
+                        href="{{ route('products') }}">
+                        <i class="fas fa-boxes"></i>
+                        <span class="nav-link-text">Product</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

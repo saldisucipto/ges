@@ -35,11 +35,16 @@ Route::middleware(['auth'])->group(function () {
         // Static Pages
         Route::get('/static-pages', 'StaticPagesController@index')->name('staticPages');
         Route::post('/static-pages/create', 'StaticPagesController@staticPages')->name('createPages');
-        // Product Pages
+        // Product Category Pages
         Route::get('/products-category', 'ProductController@indexProdCat')->name('productCategory');
         Route::post('/product-category-create', 'ProductController@createCategory')->name('createCategory');
         Route::match(['get', 'put'], '/category-product/{id}', 'ProductController@editCategoryProduct');
         Route::get('/delete-category/{id}', 'ProductController@deleteCat');
+        // Product
+        Route::get('/products', 'ProductController@product')->name('products');
+        Route::post('/product-create', 'ProductController@createProduct')->name('createProduct');
+        Route::match(['get', 'put'], '/products-update/{id}', 'ProductController@updateProduct');
+        Route::get('/products-destory/{id}', 'ProductController@deleteProduct');
     });
 });
 

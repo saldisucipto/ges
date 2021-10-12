@@ -18,6 +18,8 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('dashboard_assets/css/argon.css?v=1.2.0') }}" type="text/css">
+    {{-- Data Tables --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 </head>
 
 <body>
@@ -26,9 +28,8 @@
     @yield('konten')
 
     {{-- My js --}}
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('dashboard_assets/js/myjs.js') }}"></script>
-
+    <script src=" {{ asset('js/app.js') }}">
+    </script>
     <!-- Argon Scripts -->
     <!-- Core -->
     <script src="{{ asset('dashboard_assets/vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -40,6 +41,16 @@
     <script src="{{ asset('dashboard_assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
     <script src="{{ asset('dashboard_assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
     <!-- Argon JS -->
+    <script>
+        $(document).ready( function () {
+    $('#jokes').DataTable();
+} );
+    </script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
+    </script>
+
+    <script src="{{ asset('dashboard_assets/js/myjs.js') }}"></script>
+
     <script src="{{ asset('dashboard_assets/js/argon.js?v=1.2.0') }}"></script>
 </body>
 
