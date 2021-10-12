@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\CompanyInfo;
 
 class FrontController extends Controller
 {
@@ -21,6 +22,9 @@ class FrontController extends Controller
     // contact
     public function contact()
     {
-        return view('front.contact');
+        $data = CompanyInfo::find(1);
+        return view('front.contact', [
+            'data' => $data
+        ]);
     }
 }

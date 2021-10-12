@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Sliders as datanya;
 
 class Sliders extends Component
 {
@@ -23,6 +24,9 @@ class Sliders extends Component
      */
     public function render()
     {
-        return view('components.sliders');
+        $slider = datanya::get();
+        return view('components.sliders', [
+            'slider' => $slider,
+        ]);
     }
 }

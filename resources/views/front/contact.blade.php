@@ -79,9 +79,12 @@
             </div>
         </section>
         <section id="content">
-            <iframe
+            {{-- <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452"
-                width="100%" height="380" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                width="100%" height="380" frameborder="0" style="border:0" allowfullscreen=""></iframe> --}}
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8356559978674!2d106.76381641464747!3d-6.15275966202123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f71f278dd991%3A0xfb8bf204f7bf10a0!2sPRIMA%20CENTER%202!5e0!3m2!1sen!2sid!4v1632716195593!5m2!1sen!2sid"
+                width="100%" height="380" frameborder="0" style="border:0" allowfullscreen=" loading=" lazy"></iframe>
 
             <div class="container pt-5">
                 <div class="row">
@@ -128,11 +131,10 @@
                                 <h5 class="widgetheading">Contact information<span></span></h5>
 
                                 <ul class="contact-info">
-                                    <li><label>Address :</label> Tinggi sekali tower Jl.Kemacetan timur<br> Jakarta
-                                        selatan - Indonesia</li>
-                                    <li><label>Phone :</label>+62 123 456 78 / +62 123 456 79</li>
-                                    <li><label>Fax : </label>+62 123 456 10 / +62 123 456 11</li>
-                                    <li><label>Email : </label> info@yourdomain.com</li>
+                                    <li><label>Address :</label> {{$data->address}} </li>
+                                    <li><label>Phone :</label>{{$data->phone}}</li>
+                                    <li><label>Fax : </label>{{$data->phone}}</li>
+                                    <li><label>Email : </label> {{$data->email}}</li>
                                 </ul>
 
                             </div>

@@ -63,40 +63,7 @@
         <!-- end header -->
 
         <!-- section Sliders -->
-        <section id="featured">
-            <!-- slideshow start here -->
-            <div class="camera_wrap" id="camera-slide">
-                <!-- slide 1 here -->
-                <div data-src="{{ asset('frontend_assets/img/slides/camera/slide1/img1.jpg') }}">
-                    <div class="camera_caption fadeFromLeft">
-                        <div class="container">
-                            <div class="row">
-                                <div class="span6">
-                                    <h2 class="animated fadeInDown"><strong>Great template for <span
-                                                class="colored">multi
-                                                usage</span></strong></h2>
-                                    <p class="animated fadeInUp"> Vim porro dicam reprehendunt te, populo quodsi
-                                        dissentiet
-                                        cum ad. Ne natum deseruisse vis. Iisque deseruisse sententiae mel ne, dolores
-                                        appetere vim ut. Sea no tamquam reprimique.</p>
-                                    <a href="#" class="btn btn-success btn-large animated fadeInUp">
-                                        <i class="icon-link"></i> Read more
-                                    </a>
-                                    <a href="#" class="btn btn-theme btn-large animated fadeInUp">
-                                        <i class="icon-download"></i> Download
-                                    </a>
-                                </div>
-                                <div class="span6">
-                                    <img src="{{ asset('frontend_assets/img/slides/camera/slide1/screen.png') }}" alt=""
-                                        class="animated bounceInDown delay1" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- slideshow end here -->
-        </section>
+        <x-sliders></x-sliders>
         <!-- /section Sliders -->
         {{-- Under Slider --}}
         <section id="content">
@@ -141,7 +108,7 @@
                                         <i class="ico icon-circled icon-bgdark icon-laptop active icon-3x"></i>
                                     </div>
                                     <div class="text">
-                                        <h4>Modern <strong>Design</strong></h4>
+                                        <h4>Modern <strong>Services</strong></h4>
                                         <p>
                                             Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea
                                             facilisis.
