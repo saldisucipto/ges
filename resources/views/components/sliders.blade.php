@@ -11,7 +11,7 @@
                             <h2 class="animated fadeInDown"><strong>{{$item->title}} <span class="colored">GES
                                     </span></strong></h2>
                             <p class="animated fadeInUp">{!! $item->description !!}</p>
-                            <a href="{{$item->slugs}}" class="btn btn-success btn-large animated fadeInUp">
+                            <a href="/about" class="btn btn-success btn-large animated fadeInUp">
                                 <i class="icon-link"></i> Read more
                             </a>
                         </div>

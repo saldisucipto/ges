@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\CompanyInfo;
 use App\Models\Product;
 use App\Models\CategoryProduct;
+use App\Models\StaticPage;
 
 class FrontController extends Controller
 {
@@ -23,7 +24,10 @@ class FrontController extends Controller
     // about
     public function about()
     {
-        return view('front.about');
+        $data = StaticPage::find(2);
+        return view('front.about', [
+            'data' => $data
+        ]);
     }
 
     // contact

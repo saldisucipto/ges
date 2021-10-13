@@ -18,7 +18,8 @@
     <link href="{{ asset('frontend_assets/css/jquery.bxslider.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend_assets/css/style.css') }}" rel="stylesheet" />
     <!-- Styles -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    {{--
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
 
     {{-- Livewire --}}
     @livewireStyles
@@ -77,12 +78,11 @@
                                         <i class="ico icon-circled icon-bgdark icon-star active icon-3x"></i>
                                     </div>
                                     <div class="text">
-                                        <h4>High <strong>Quality</strong></h4>
+                                        <h4>GES <strong>{{$datapertama->title}}</strong></h4>
                                         <p>
-                                            Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea
-                                            facilisis.
+                                            {!! $datapertama->description !!}
                                         </p>
-                                        <a href="#">Learn More</a>
+                                        <a href="/product">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -93,12 +93,11 @@
                                         <i class="ico icon-circled icon-bgdark icon-dropbox active icon-3x"></i>
                                     </div>
                                     <div class="text">
-                                        <h4>Rich of <strong>Features</strong></h4>
+                                        <h4>GES <strong>{{$datakedua->title}}</strong></h4>
                                         <p>
-                                            Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea
-                                            facilisis.
+                                            {!! $datakedua->description !!}
                                         </p>
-                                        <a href="#">Learn More</a>
+                                        <a href="/product">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -108,12 +107,12 @@
                                         <i class="ico icon-circled icon-bgdark icon-laptop active icon-3x"></i>
                                     </div>
                                     <div class="text">
-                                        <h4>Modern <strong>Services</strong></h4>
+                                        <h4>GES <strong>{{$dataketiga->title}}</strong></h4>
                                         <p>
-                                            Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea
-                                            facilisis.
+                                            {!! $dataketiga->description !!}
+
                                         </p>
-                                        <a href="#">Learn More</a>
+                                        <a href="/product">Learn More</a>
                                     </div>
                                 </div>
                             </div>

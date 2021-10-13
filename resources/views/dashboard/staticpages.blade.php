@@ -58,8 +58,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <h5 class="card-title text-uppercase text-muted mb-0">{{$item->title}}</h5>
-                                        <span class="h3 font-weight-bold mb-0"><a href="static-pages/{{$item->id}}"><i
-                                                    class="fas fa-cogs"></i>
+                                        <span class="h3 font-weight-bold mb-0"><a
+                                                href="static-pages/update/{{$item->id}}"><i class="fas fa-cogs"></i>
                                                 Settings</a></span>
                                     </div>
                                     <div class="col-auto">

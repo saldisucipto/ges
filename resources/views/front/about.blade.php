@@ -18,7 +18,8 @@
     <link href="{{ asset('frontend_assets/css/jquery.bxslider.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend_assets/css/style.css') }}" rel="stylesheet" />
     <!-- Styles -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    {{--
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
 
     {{-- Livewire --}}
     @livewireStyles
@@ -81,19 +82,8 @@
                 <div class="row">
 
                     <div class="span12">
-                        <h4>About our company</h4>
-                        <p>
-                            Ei mel semper vocent persequeris, nominavi patrioque vituperata id vim, cu eam gloriatur
-                            philosophia deterruisset. Meliore perfecto repudiare ea nam, ne mea duis temporibus. Id quo
-                            accusam consequuntur, eum ea debitis urbanitas. Nibh reformidans vim ne.
-                        </p>
-                        <blockquote>
-                            Iudico definiebas eos ea, dicat inermis hendrerit vel ei, legimus copiosae quo at. Per
-                            utinam corrumpit prodesset te, liber praesent eos an. An prodesset neglegentur qui, usu
-                            ancillae posidonium in, mea ex eros animal scribentur. Et simul fabellas sit.
-                            Populo inimicus ne est.
-                        </blockquote>
-
+                        <h4>{{$data->title}}</h4>
+                        {!! $data->description !!}
                     </div>
 
                 </div>

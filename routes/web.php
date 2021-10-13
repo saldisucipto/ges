@@ -2,9 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\CompanyInfo;
+use App\Models\StaticPage;
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = StaticPage::find(1);
+    $datapertama = StaticPage::find(3);
+    $datakedua = StaticPage::find(4);
+    $dataketiga = StaticPage::find(5);
+    return view('welcome', [
+        'data' => $data,
+        'datapertama' => $datapertama,
+        'datakedua'=> $datakedua,
+        'dataketiga' => $dataketiga
+    ]);
 });
 
 Route::get('/product', 'FrontController@produk');
@@ -36,6 +46,8 @@ Route::middleware(['auth'])->group(function () {
         // Static Pages
         Route::get('/static-pages', 'StaticPagesController@index')->name('staticPages');
         Route::post('/static-pages/create', 'StaticPagesController@staticPages')->name('createPages');
+        Route::match(['get','put'], '/static-pages/update/{id}', 'StaticPagesController@editStaticPages');
+        Route::get('/static-pages/delete/{id}', 'StaticPagesController@deleteStaticPages');
         // Product Category Pages
         Route::get('/products-category', 'ProductController@indexProdCat')->name('productCategory');
         Route::post('/product-category-create', 'ProductController@createCategory')->name('createCategory');
