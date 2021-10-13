@@ -18,7 +18,8 @@
     <link href="{{ asset('frontend_assets/css/jquery.bxslider.css') }}" rel="stylesheet" />
     <link href="{{ asset('frontend_assets/css/style.css') }}" rel="stylesheet" />
     <!-- Styles -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+    {{--
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
 
     {{-- Livewire --}}
     @livewireStyles
@@ -116,7 +117,7 @@
                                         data-msg="Please write something for us" placeholder="Message"></textarea>
                                     <div class="validation"></div>
                                     <div class="text-center">
-                                        <button class="btn btn-theme btn-medium margintop10" type="submit">Send a
+                                        <button class="btn btn-theme btn-medium margintop10" type="button">Send a
                                             message</button>
                                     </div>
                                 </div>
